@@ -1,0 +1,38 @@
+{% extends '/base/templates/base.html' %}
+
+{% block main %}
+
+  <div class="latest-media">
+    <h2>Picture of the day</h2>   
+    {% if resp.media_type == 'image' %}
+      <a href="{{ resp.hdurl }}" target="_"><img src="{{ media }}" alt="Picture of the day"></a>
+    {% elif resp.media_type == 'video' %}
+      <a href="{{ resp.hdurl }}" target="_"><iframe src="{{ media }}" frameborder="0"></iframe></a>
+    {% endif %}
+    <h3>{{ resp.title }}</h3>
+    <p>{{ resp.explanation }}</p>
+    <h4>Copyright: {{ resp.copyright }}</h4>
+  </div>
+
+
+  <form class="search-bar" id="search-form">
+    <span><b>Search for older pictures:</b></span>
+    <label for="start_date">From:</label>
+    <input type="date" name="start_date" id="start_date">
+    <label for="end_date">To:</label>
+    <input type="date" name="end_date" id="end_date">
+    <input type="submit" id="search-submit" value="Search">
+    <div id="loading"></div>
+  </form>
+
+  
+  <div class="image-container" id="image-container">
+   
+  </div>
+
+
+
+
+
+{% endblock main %}
+

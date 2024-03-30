@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/mystyles.css') }}">
+  <title>Nasa Astronomy Pictures</title>
+</head>
+<body>
+  <h1 class="header"><a href="/">Nasa Astronomy Pictures</a></h1>
+
+  {% block main %}{% endblock main %}
+
+  <h3 class="footer"><a href="/">Spyros Alexakis &copy;2024</a></h3>
+  <script src="{{ url_for('static', filename='js/data.js')}}"></script>
+</body>
+</html>
